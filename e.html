@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Animated Table</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<style>
+body{
+    background-image: url("home1.jpg");
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: 100%;
+}
+ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    font-size: larger;
+    
+}
+li {
+    float: right;
+}
+li a {
+    display: block;
+    color: white;
+    text-align: center;
+    padding: 16px;
+    text-decoration: none;
+    font-size: larger;
+}
+li a:hover {
+    background-color: aqua;
+}   
+h1 {
+    text-align: center;
+    padding-bottom: 0px;
+}
+
+.animated-table {
+    border-collapse: collapse;
+    width: 100%;
+    max-width: 600px;
+    margin: 200px auto; /* Add margin to the top to bring the table down */
+}
+
+.animated-table th,
+.animated-table td {
+    border: 1px solid #ddd;
+    padding: 8px;
+    text-align: left;
+}
+
+.animated-table th {
+    background-color: #f2f2f2;
+}
+
+.animated-table tbody tr:nth-child(even) {
+    background-color: #f2f2f2;
+}
+
+@keyframes slideIn {
+    from {
+        transform: translateX(-100%);
+        opacity: 0;
+    }
+    to {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+
+.animated-table th,
+.animated-table td {
+    animation: slideIn 0.5s ease-in-out forwards;
+}
+
+.animated-table th:nth-child(odd),
+.animated-table td:nth-child(odd) {
+    animation-delay: 0.1s;
+}
+
+.animated-table th:nth-child(even),
+.animated-table td:nth-child(even) {
+    animation-delay: 0.2s;
+}
+td{
+    color:yellow;
+}
+</style>
+<body>
+    <ul>
+        <li><a  href="contact.html" >CONTACT</a></li>
+        <li><a href="event.html">UPCOMING EVENTS</a></li>
+        <li><a href="vdo.html">MEMBERS</a></li>
+        <li><a href="objective.html">OBJECTIVES</a></li>
+        <li><a href="home1.html">HOME</a></li>
+      </ul>
+    <h1>UPCOMING EVENTS</h1>
+    <p></p>
+    <table class="animated-table">
+        <thead>
+            <tr>
+                <th>EVENT NAME</th>
+                <th>DATE</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>REPLICATE REALM</td>
+                <td>FEB 15&16 2024</td>
+            </tr>
+            <tr>
+                <td>PAPYRUS</td>
+                <td>FEB 29 2024</td>
+            </tr>
+            <tr>
+                <td>HACK IN TIME</td>
+                <td>MARCH 11,2024</td>
+            </tr>
+            <tr>
+                <td>GUEST LECTURE AND AWARDING CEREMONY</td>
+                <td>MARCH 11,2024</td>
+            </tr>
+            <tr>
+                <td>PROJECT EXPO</td>
+                <td>MARCH 18,2024</td>
+            </tr>
+            <tr>
+                <td>VALIDICTORY</td>
+                <td>APRIL29,2024</td>
+            </tr>
+        </tbody>
+    </table>
+</body>
+</html>

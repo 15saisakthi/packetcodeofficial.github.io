@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Popup Login Page</title>
+<style>
+  body{
+    background-image: url("home1.jpg");
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: 100%;
+  }
+  ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    font-size: larger;
+    
+}
+li {
+    float: right;
+}
+li a {
+    display: block;
+    color: white;
+    text-align: center;
+    padding: 16px;
+    text-decoration: none;
+    font-size: larger;
+}
+li a:hover {
+    background-color:#0b011c;
+}        
+  /* The overlay */
+  .overlay {
+    display: none;
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent black background */
+    z-index: 1; /* Ensure the overlay is on top of other content */
+    cursor: pointer; /* Change cursor to pointer when hovering over the overlay */
+  }
+
+  .popup {
+    display: none;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: rgb(152, 181, 207);
+    padding: 100px;
+    border-radius: 5px;
+    z-index: 2; /* Ensure the popup is on top of the overlay */
+  }
+
+  /* Styling for the form fields */
+  .popup input[type="text"],
+  .popup input[type="password"] {
+    width: 100%;
+    padding: 10px;
+    margin: 5px 0;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+  }
+
+  /* Styling for the submit button */
+  .popup input[type="submit"] {
+    width: 100%;
+    background-color: #0b011c;
+    color: white;
+    padding: 10px 20px;
+    margin: 8px 0;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+  }
+
+  /* Close button */
+  .close {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    color:black;
+    font-size: 20px;
+    text-decoration: none;
+  }
+  .animated-text {
+    animation: fadeInOut 5s ease-in-out infinite;
+  }
+  button{
+    height:40px;
+    width:100px;
+    background-color:white;
+    margin-bottom: 100px;
+  }
+
+  /* Define keyframes for the animation */
+  @keyframes fadeInOut {
+    0%, 100% {
+      opacity: 0;
+    }
+    50% {
+      opacity: 1;
+    }
+  }
+</style>
+</head>
+<body>
+
+  <p class="animated-text" style="font-size: 70px;text-align: center;color:white;margin-bottom: 10px;font-family: Arial, Helvetica, sans-serif;margin-top: 100px;"><b> DEV DYNASTY</b></p>
+
+<!-- The overlay -->
+<div id="overlay" class="overlay"></div>
+
+<!-- The popup login form -->
+<div id="popup" class="popup">
+  <a href="#" class="close" onclick="closePopup()">&times;</a>
+  <form onsubmit="return login()">
+    <label for="username">Username:</label><br>
+    <input type="text" id="username" name="username" required><br>
+    <label for="password">Password:</label><br>
+    <input type="password" id="password" name="password" required><br><br>
+    <input type="submit" value="Login">
+  </form>
+</div>
+<p style="text-align:center;font-size:50px;margin-bottom: 90000000px;"><button onclick="openPopup()">login</button></p>
+
+<script>
+  // Predefined username and password
+  const predefinedUsername = "msec";
+  const predefinedPassword = "123";
+
+  // Function to open the popup
+  function openPopup() {
+    document.getElementById('overlay').style.display = 'block';
+    document.getElementById('popup').style.display = 'block';
+  }
+
+  // Function to close the popup
+  function closePopup() {
+    document.getElementById('overlay').style.display = 'none';
+    document.getElementById('popup').style.display = 'none';
+  }
+
+  // Function to handle login
+  function login() {
+    const username = document.getElementById('username').value;
+    const password = document.getElementById('password').value;
+
+    if (username === predefinedUsername && password === predefinedPassword) {
+      alert("Login successful!");
+
+      closePopup();
+      window.location.href = "home1.html";
+      return false; // Prevent form submission
+    } else {
+      alert("Invalid username or password. Please try again.");
+      return false; // Prevent form submission
+    }
+  }
+</script>
+
+</body>
+</html>

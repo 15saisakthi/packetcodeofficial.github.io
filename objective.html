@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<style>
+  /* Styling for the buttons */
+  body{
+    background-image: url("home1.jpg");
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: 100%;
+}
+ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    font-size: larger;
+    
+}
+li {
+    float: right;
+}
+li a {
+    display: block;
+    color: white;
+    text-align: center;
+    padding: 16px;
+    text-decoration: none;
+    font-size: larger;
+}
+li a:hover {
+    background-color: aqua;
+}   
+  .slide-button {
+    background-color: rgb(115, 20, 20);
+    font-size: medium;
+    color: white;
+    padding: 30px 10px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: transform 0.3s ease;
+    margin-right: 10px;
+    width:550px;
+    height: auto;
+    text-align:left;
+  }
+
+  /* Styling for the buttons when they're sliding */
+  .slide-right {
+    transform: translateX(100%);
+  }
+</style>
+</head>
+<body>
+  <ul>
+    <li><a  href="contact.html" >CONTACT</a></li>
+    <li><a href="e.html">UPCOMING EVENTS</a></li>
+    <li><a href="vdo.html">MEMBERS</a></li>
+    <li><a href="objective.html">OBJECTIVES</a></li>
+    <li><a href="home1.html">HOME</a></li>
+  </ul>
+<p style="color:aqua;font-size: xx-large;text-align: center;"> <b>OBJECTIVE</b></p>
+  <br><br>
+<!-- Buttons that slide to the right -->
+<button class="slide-button" onclick="slideButton(this)"><i>“the beautiful thing about learning is that no one can take  it away from you”</i></button><br><br>
+<button class="slide-button" onclick="slideButton(this)"><i>Meenakshi Sundararajan Engneering College, is a distinguished institution dedicated to fostering excellence in technology education and preparing future leaders in the rapidly evolving field of computer science, Informational Technology, Mechanical Enginnering , Civil Enginnering and Electrical Engineering .With a commitment to innovation, hands-on learning, and industry relevance, our college offers a dynamic curriculum that equips students with the skills, knowledge, and mindset necessary to thrive in the digital age.</i></button><br><br>
+<button class="slide-button" onclick="slideButton(this)"><i>At Meenakshi Sundararajan Engineering College, students engage in a rigorous academic environment characterized by cutting-edge coursework, experiential projects, and collaborative research opportunities. Our faculty comprises accomplished scholars and industry experts who are dedicated to mentorship, pushing the boundaries of knowledge, and empowering students to realize their full potential.</i></button>
+
+<script>
+  // Function to slide the button to the right and back
+  function slideButton(button) {
+    // Toggle the "slide-right" class on the button
+    button.classList.toggle('slide-right');
+    
+    // After 1 second, remove the "slide-right" class to slide back
+    setTimeout(() => {
+      button.classList.toggle('slide-right');
+    }, 1000);
+  }
+</script>
+
+</body>
+</html>
